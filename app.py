@@ -3,13 +3,13 @@ import openai
 from flask import Flask, request, render_template
 from dotenv import load_dotenv
 import pdfplumber
-from googletrans import Translator
+from deep_translator import GoogleTranslator
+
 
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 app = Flask(__name__)
-translator = Translator()
 
 def summarize_text(text, lang='en'):
     prompt = f"Explain this legal document simply in {lang}:\n{text[:2000]}"
