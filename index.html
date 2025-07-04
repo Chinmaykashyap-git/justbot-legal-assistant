@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JustBot - Legal Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>⚖️ JustBot - Your Legal AI Assistant</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Ask a Legal Question:</label><br>
+        <textarea name="question" rows="4" cols="50" placeholder="E.g., What are tenant rights in India?"></textarea><br>
+        <label>Or upload a legal document (PDF):</label>
+        <input type="file" name="pdf"><br>
+        <label>Output language:</label>
+        <select name="lang">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+        </select><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if result %}
+    <h3>📝 Result:</h3>
+    <div class="result">{{ result }}</div>
+    {% endif %}
+</body>
+</html>
