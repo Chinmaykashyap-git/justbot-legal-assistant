@@ -12,8 +12,7 @@ app = Flask(__name__)
 translator = Translator()
 
 def summarize_text(text, lang='en'):
-    prompt = f"Explain this legal document simply in {lang}:
-\n{text[:2000]}"
+    prompt = f"Explain this legal document simply in {lang}:\n{text[:2000]}"
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}]
